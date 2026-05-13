@@ -28,6 +28,9 @@ LICENSE_FLAGS_ACCEPTED = "synaptics-killswitch"
 # ease up disk space requirements
 INHERIT += "rm_work"
 
+# sbom
+INHERIT += "cyclonedx-export"
+
 # Torizon
 include conf/machine/include/\${MACHINE}.inc
 EOF
@@ -72,6 +75,8 @@ BBLAYERS += "\${OEROOT}/layers/meta-toradex-torizon"
 # Torizon deps
 BBLAYERS += "\${OEROOT}/layers/meta-updater"
 BBLAYERS += "\${OEROOT}/layers/meta-virtualization"
+# SBOM layer
+BBLAYERS += "\${OEROOT}/layers/meta-cyclonedx"
 # meta-updater and meta-virtualization deps
 BBLAYERS += "\${OEROOT}/layers/meta-openembedded/meta-filesystems"
 BBLAYERS += "\${OEROOT}/layers/meta-openembedded/meta-python"
