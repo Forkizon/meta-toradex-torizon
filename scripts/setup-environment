@@ -89,6 +89,7 @@ _TDX_COMMON_MACHINES=("am62lxx-evm"   "meta-ti-bsp" \
                  "intel-corei7-64"    "meta-intel" \
                  "jetson-orin-nano-devkit" "meta-tegra" \
                  "jetson-orin-nano-devkit-nvme" "meta-tegra" \
+                 "raspberrypi4-64"    "meta-raspberrypi" \
                  "sl1680"             "meta-synaptics" \
                  "sl2619"             "meta-synaptics" \
                  "smarc-rzv2l"        "rz-community-bsp" \
@@ -192,6 +193,9 @@ else
         ;;
         jetson-orin-nano-devkit|jetson-orin-nano-devkit-nvme)
             DISTRO="common-torizon" . ${_TDX_SCRIPTS_PATH}/setup-environment-nvidia
+        ;;
+        raspberrypi4-64)
+            DISTRO="common-torizon" . ${_TDX_SCRIPTS_PATH}/setup-environment-rpi $@
         ;;
         smarc-rzv2l)
             DISTRO="common-torizon" . ${_TDX_SCRIPTS_PATH}/setup-environment-renesas
